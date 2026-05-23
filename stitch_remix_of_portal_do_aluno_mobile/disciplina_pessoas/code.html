@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Pessoas - Disciplina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#006688",
+                        "outline-variant": "#c6c5d4",
+                        "surface-dim": "#cedde0",
+                        "on-surface-variant": "#454652",
+                        "surface-container-low": "#e8f6f9",
+                        "surface-container-high": "#ddebee",
+                        "primary-container": "#003448",
+                        "secondary-container": "#50d9fe",
+                        "surface": "#eefcff",
+                        "on-secondary-fixed": "#001f27",
+                        "tertiary-fixed": "#c3e9f1",
+                        "surface-container": "#e2f0f3",
+                        "secondary-fixed": "#b3ebff",
+                        "outline": "#767683",
+                        "inverse-primary": "#77d1ff",
+                        "primary": "#001e2b",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#001f24",
+                        "surface-variant": "#d7e5e8",
+                        "primary-fixed-dim": "#77d1ff",
+                        "secondary-fixed-dim": "#4cd6fb",
+                        "on-tertiary-fixed-variant": "#284c53",
+                        "on-background": "#111e20",
+                        "on-primary-container": "#26a2d4",
+                        "on-primary-fixed": "#001e2c",
+                        "inverse-on-surface": "#e5f3f6",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#004d68",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#0e353b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#111e20",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#a8cdd5",
+                        "on-secondary-container": "#005c70",
+                        "surface-bright": "#eefcff",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#263335",
+                        "background": "#eefcff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#001f24",
+                        "primary-fixed": "#c2e8ff",
+                        "on-secondary-fixed-variant": "#004e5f",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#d7e5e8",
+                        "secondary": "#00677d",
+                        "on-tertiary-container": "#7a9ea5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-margin": "24px",
+                        "stack-gap": "16px",
+                        "inline-gap": "12px",
+                        "base": "4px",
+                        "grid-gutter": "16px",
+                        "grid-columns": "4",
+                        "container-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["10px", { "lineHeight": "12px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+                        "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen pb-20">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background flex items-center justify-between w-full px-section-margin py-base sticky top-0 z-40 border-b border-outline-variant/30">
+<div class="flex items-center gap-inline-gap">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity p-2 -ml-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Cálculo Diferencial e Integral III</h1>
+</div>
+<div class="flex items-center gap-inline-gap">
+
+</div>
+</header>
+<!-- Navigation Tabs -->
+<nav class="bg-background border-b border-outline-variant/30 overflow-x-auto whitespace-nowrap px-section-margin sticky top-[60px] z-30">
+<div class="flex gap-stack-gap">
+<a class="px-1 py-3 text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors border-b-2 border-transparent" href="#">Mural</a>
+<a class="px-1 py-3 text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors border-b-2 border-transparent" href="#">Atividades</a>
+<a class="px-1 py-3 text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors border-b-2 border-transparent" href="#">Notas</a>
+<a class="px-1 py-3 text-primary font-label-md text-label-md border-b-2 border-primary font-bold" href="#">Pessoas</a>
+</div>
+</nav>
+<main class="p-container-padding max-w-4xl mx-auto flex flex-col gap-8 mt-4">
+<!-- Professores Section -->
+<section>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4 border-b border-outline-variant/30 pb-2">Professores</h2>
+<div class="flex flex-col gap-4">
+<!-- Teacher Card -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center justify-between group hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all">
+<div class="flex items-center gap-4">
+<img alt="Prof. Dr. Ricardo Silva" class="w-12 h-12 rounded-full object-cover border border-outline-variant/20" data-alt="A professional headshot of a male professor in his late 40s with short dark hair and a neat beard, wearing a light blue dress shirt and a dark blazer. The background is a slightly blurred academic office setting with bookshelves. The lighting is soft and natural, creating a trustworthy and knowledgeable mood within a modern academic light-mode UI context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxOpkG-19EuRpBvtMZLCwy4_H3d_AKZvHs9tF-sD3OQZi50TOZJ5ZUIxThMfHa2ddNW33Crw1AYvGnmU93zmdw-8jL7cq4DJGVv8vi0iJ-HByO5J4h2_DCGH7zQEGpq1XK7aLgc9JdSjHxaOCIvvN3UCsPnUFjbox236_4bcKdWX_8zkgU3J9oaDxTI9xejwsTovhKK77ZHyzv1c89aoWuCOMhEMLn90qLtak88PQM5jtlxVMRiWgRDKwhh-hixmZnFDwyMR3x97A">
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Prof. Dr. Ricardo Silva</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Professor Titular</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button aria-label="Enviar mensagem" class="p-2 text-secondary hover:bg-surface-container-low rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+</div>
+<!-- Teacher Card -->
+<div class="bg-surface-container-lowest rounded-lg p-4 shadow-[0_2px_8px_rgba(0,0,0,0.04)] flex items-center justify-between group hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant font-headline-sm text-headline-sm">
+                            MH
+                        </div>
+<div>
+<h3 class="font-body-lg text-body-lg text-on-surface font-semibold">Profa. Dra. Mariana Hoff</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Professora Assistente</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button aria-label="Enviar mensagem" class="p-2 text-secondary hover:bg-surface-container-low rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Alunos Section -->
+<section>
+<div class="flex items-center justify-between mb-4 border-b border-outline-variant/30 pb-2">
+<h2 class="font-headline-sm text-headline-sm text-primary">Colegas de Turma <span class="text-on-surface-variant font-body-sm text-body-sm ml-2 font-normal">32 alunos</span></h2>
+</div>
+<!-- Search/Filter -->
+<div class="mb-6 relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/50 rounded-lg py-2 pl-10 pr-4 font-body-md text-body-md text-on-surface focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors shadow-sm" placeholder="Buscar aluno..." type="text">
+</div>
+<!-- Student List Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Student Card -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between group hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-3">
+<img alt="Ana Beatriz" class="w-10 h-10 rounded-full object-cover" data-alt="A casual portrait of a young female college student with long brown hair, smiling warmly. She is outdoors on a sunny day with blurred campus buildings in the background. The mood is friendly and approachable, fitting a modern light-mode academic application palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcNVePHwjrWGowzu1lJzvn1Tay87rkTbtCFXVQD88zAKHPg7YzC-O63DDH9YBjnsL3SCUckHLPaic6jZ6JQ8mimnz8m5wiV0TjMi9zHUGr0yZkWk5TyNi1Iu8vTlYGN0Hfx7pw_5kprog0tW0kIt566j1OTulgXPRuQ9TIWuTBMloNK2tcsnlqFo56APKeGOOnv-uqo-qmzD7XBmeejMiY-cj0nkuC87nojSkj11_MquGioVP12I9LliMjaIeBSxw8uXkArF9BbjQ">
+<span class="font-body-md text-body-md text-on-surface font-medium">Ana Beatriz Carvalho</span>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Student Card -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between group hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed font-body-md text-body-md font-semibold">
+                            CR
+                        </div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Carlos Rodrigues</span>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Student Card -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between group hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-3">
+<img alt="Daniel Souza" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a young male university student with short curly hair and glasses, looking thoughtful. The background is a softly lit library interior. The lighting is warm and intellectual, maintaining a clean, modern aesthetic suitable for a student directory in light mode." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDceXhoN8kby4SqrZH6ShTqWM7A3Z7oYdwn6IZpL36Ra4VuLvogZbmqEtIjw1C4gid7xwAXoEnD3ktFyXMRAuZZCmEPiUoXt7GgNwCVkKfnIxNAKIc9fGchFmkQ04wvF2OrFq9e-8lD67kWi6YwHMvqd5ay8eFAlTqNgarARA003w5MwEzxa3MTneBHMOOQSOuX5wZ1yHcvpbhY-frX4Z3KaeZI0mvQHHx83beXVD1VSc300QWGjMI039k2NXclNXE-RHGqL2WPXI">
+<span class="font-body-md text-body-md text-on-surface font-medium">Daniel Souza</span>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Student Card -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between group hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-body-md text-body-md font-semibold">
+                            FL
+                        </div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Fernanda Lima</span>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Student Card -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between group hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-3">
+<img alt="Gabriela Costa" class="w-10 h-10 rounded-full object-cover" data-alt="A bright portrait of a female student with shoulder-length blonde hair, smiling at the camera. She is in a modern study area with white walls and natural light. The aesthetic is clean, energetic, and perfectly fits a modern corporate academic UI theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQNqZqUzN4R1vrRhzN4i_KsNrI3i5R1Q4_tAtMZiBBLy8ipPnwwisfvyFE4Aw2azo8W3WIvvvpbm2rLwGxUYzhV-mm3j7RX2EOyhhMZXaVrZHFeHS0v1TCJuVvgZBo3Ei2aDBnoRfkr9v05Y1g039mOBnQXh63f5f8B3_ZRtJL3N3TsOZ8U0-75PuNM9jzwXM51ePUUfNM4DIr9rCFDZ6CW23zfcCn6J_ExcCTFTEYHQ_0w4ycwSNlVMaSkb_3w91aV_zYBoftAq4">
+<span class="font-body-md text-body-md text-on-surface font-medium">Gabriela Costa</span>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<!-- Student Card -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex items-center justify-between group hover:bg-surface-container-low transition-colors border border-transparent hover:border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-body-md text-body-md font-semibold">
+                            JP
+                        </div>
+<span class="font-body-md text-body-md text-on-surface font-medium">João Pedro Silva</span>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-secondary rounded-full transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+</div>
+<div class="mt-6 flex justify-center">
+<button class="text-secondary font-label-md text-label-md hover:underline bg-surface-container-low px-4 py-2 rounded-lg transition-colors">
+                    Carregar mais alunos
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant dark:border-outline-variant shadow-md bg-surface-container-lowest dark:bg-surface-container-lowest flex justify-around items-center px-4 py-2 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-2 rounded-lg w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-2 rounded-lg w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="login">login</span>
+<span class="font-label-sm text-label-sm">Acesso</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-colors p-2 rounded-lg w-16" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="help_outline">help_outline</span>
+<span class="font-label-sm text-label-sm">Ajuda</span>
+</a>
+</nav>
+
+
+</body></html>

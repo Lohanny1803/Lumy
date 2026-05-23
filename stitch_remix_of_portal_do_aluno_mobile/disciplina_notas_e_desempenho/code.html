@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Lumy - Detalhes da Disciplina</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            background-color: #000666;
+            transition: all 0.3s ease;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #e0e3e6;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"inverse-primary": "#77d1ff", "on-error-container": "#93000a", "surface-tint": "#006688", "on-error": "#ffffff", "outline-variant": "#c6c5d4", "on-primary": "#ffffff", secondary: "#00677d", "surface-container-low": "#e8f6f9", "secondary-fixed": "#b3ebff", "secondary-fixed-dim": "#4cd6fb", "tertiary-fixed": "#c3e9f1", "on-secondary": "#ffffff", "on-primary-fixed-variant": "#004d68", "primary-fixed": "#c2e8ff", "tertiary-fixed-dim": "#a8cdd5", background: "#eefcff", "on-surface-variant": "#454652", "surface-container-high": "#ddebee", "on-secondary-fixed-variant": "#004e5f", "surface-container-highest": "#d7e5e8", "error-container": "#ffdad6", "on-secondary-fixed": "#001f27", "primary-container": "#003448", "on-tertiary": "#ffffff", "surface-variant": "#d7e5e8", "on-surface": "#111e20", "on-tertiary-fixed-variant": "#284c53", "on-primary-fixed": "#001e2c", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#77d1ff", "inverse-on-surface": "#e5f3f6", error: "#ba1a1a", "on-background": "#111e20", "on-tertiary-container": "#7a9ea5", "on-primary-container": "#26a2d4", "inverse-surface": "#263335", "surface-container": "#e2f0f3", "surface-dim": "#cedde0", surface: "#eefcff", "on-tertiary-fixed": "#001f24", "secondary-container": "#50d9fe", primary: "#001e2b", outline: "#767683", tertiary: "#001f24", "surface-bright": "#eefcff", "on-secondary-container": "#005c70", "tertiary-container": "#0e353b"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}, spacing: {base: "4px", "grid-gutter": "16px", "inline-gap": "12px", "section-margin": "24px", "container-padding": "20px", "grid-columns": "4", "stack-gap": "16px"}, fontFamily: {"label-sm": ["Inter"], "headline-sm": ["Inter"], "body-lg": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"], "headline-md": ["Inter"], "body-md": ["Inter"], "label-md": ["Inter"], headline: ["Inter"], display: ["Inter"], body: ["Inter"], label: ["Inter"]}, fontSize: {"label-sm": ["10px", {lineHeight: "12px", fontWeight: "500"}], "label-sm-mobile": ["10px", {lineHeight: "12px", fontWeight: "500"}], "headline-sm": ["18px", {lineHeight: "24px", fontWeight: "600"}], "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}], "headline-lg": ["28px", {lineHeight: "34px", letterSpacing: "-0.02em", fontWeight: "700"}], "body-sm": ["12px", {lineHeight: "16px", fontWeight: "400"}], "headline-md": ["22px", {lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600"}], "headline-md-mobile": ["20px", {lineHeight: "26px", letterSpacing: "-0.01em", fontWeight: "600"}], "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}], "label-md": ["12px", {lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600"}]}}}};</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-20">
+<!-- TopAppBar -->
+<header class="bg-surface-container-lowest sticky top-0 z-40 border-b border-outline-variant/30">
+<div class="flex items-center justify-between w-full px-section-margin py-stack-gap h-16"><div class="flex items-center gap-inline-gap"><button class="text-on-surface-variant hover:text-primary transition-colors p-2 -ml-2 rounded-full hover:bg-surface-container-low"><span class="material-symbols-outlined">arrow_back</span></button><div><h1 class="font-headline-md text-headline-md font-bold text-primary">Estrutura de Dados</h1><p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mt-0.5">CIE-102 • TURMA A</p></div></div></div>
+</header><nav class="flex px-section-margin gap-inline-gap overflow-x-auto hide-scrollbar border-t border-outline-variant/10 bg-surface-container-lowest sticky top-16 z-40">
+<button class="py-3 px-1 border-b-2 border-transparent font-label-md text-label-md text-on-surface-variant whitespace-nowrap tab-btn" onclick="switchTab(this, 'mural')">Mural</button>
+<button class="py-3 px-1 border-b-2 border-transparent font-label-md text-label-md text-on-surface-variant whitespace-nowrap tab-btn" onclick="switchTab(this, 'atividades')">Atividades</button>
+<button class="py-3 px-1 border-b-2 border-primary font-label-md text-label-md text-primary font-bold whitespace-nowrap tab-btn" onclick="switchTab(this, 'notas')">Notas</button>
+<button class="py-3 px-1 border-b-2 border-transparent font-label-md text-label-md text-on-surface-variant whitespace-nowrap tab-btn" onclick="switchTab(this, 'pessoas')">Pessoas</button>
+</nav>
+<!-- Content Wrapper -->
+<main class="max-w-md mx-auto">
+<!-- Tabs Section -->
+
+<!-- Tab Panels Container -->
+<div class="p-container-padding space-y-stack-gap">
+<!-- Mural Panel (Active) -->
+<div class="tab-panel animate-in fade-in duration-300 hidden" id="panel-mural">
+<!-- Course Header Card -->
+<div class="relative h-32 w-full rounded-xl overflow-hidden mb-6 shadow-sm border border-outline-variant">
+<img class="w-full h-full object-cover brightness-75" data-alt="An abstract high-tech background featuring blue digital lines and geometric structures representing data architecture. The scene is illuminated with a professional cool-white glow, conveying clarity and organizational efficiency. The style is modern corporate, using a palette of academic blue and neutral gray shades." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBccYzzvtCTNt3g0smVletu2zrx357sjJKnHfH4lncorWdesgBYsH-UO1o4aee0I_FjwqkNuR7AjCiwMG6yPyzgiG4ZKOaba7khFCowdG804BuJE7REngKCywjULRU2JoXKdea2YkWGrOv3BqB-YN4-B-bc5otmDO0t1KIiOYRX8JgLJ7dosCoJbnBoWlCbSkA1bgebnuTTWSkM2XWx9rQ8krbTHkNlWa9kruXZhQ3yffn0gv_iBoJJ5AyLZMKeYf2z0jdzU_BPDh8">
+<div class="absolute bottom-4 left-4 text-white">
+<p class="font-label-md text-label-md opacity-90">Turma A - 2024.1</p>
+<h2 class="font-headline-sm text-headline-sm">Prof. Dr. Ricardo Silva</h2>
+</div>
+</div>
+<!-- Post Field -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm border border-outline-variant mb-6 flex gap-3 items-center">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-primary-fixed">edit_note</span>
+</div>
+<input class="bg-transparent border-none focus:ring-0 w-full text-body-md placeholder:text-on-surface-variant" placeholder="Escreva algo para sua turma..." type="text">
+</div>
+<!-- Notices Feed -->
+<div class="space-y-4">
+<!-- Post 1 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-4">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-surface-variant">person</span></div>
+<div>
+<h3 class="font-body-md font-bold text-primary">Ricardo Silva</h3>
+<p class="text-label-sm text-on-surface-variant">Ontem às 14:30</p>
+</div>
+</div>
+<p class="text-body-md text-on-surface mb-4 leading-relaxed">
+                            Olá pessoal! Disponibilizei os slides da aula sobre Listas Encadeadas na aba de Atividades. Não esqueçam de revisar para o lab de amanhã.
+                        </p>
+<div class="border-t border-outline-variant pt-3 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">person</span></div>
+<div class="bg-surface-container-low rounded-full px-4 py-2 flex-1">
+<p class="text-body-sm text-on-surface-variant">Adicionar comentário de turma...</p>
+</div>
+</div>
+</article>
+<!-- Post 2 -->
+<article class="bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant p-4">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-surface-variant">person</span></div>
+<div>
+<h3 class="font-body-md font-bold text-primary">Ricardo Silva</h3>
+<p class="text-label-sm text-on-surface-variant">12 de Jan</p>
+</div>
+</div>
+<p class="text-body-md text-on-surface mb-3">
+                            Postou um novo material: <strong>Exercícios de Fixação - Pilhas e Filas</strong>
+</p>
+<div class="bg-surface-container p-3 rounded-lg flex items-center gap-3 border border-outline-variant hover:bg-surface-container-high cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">description</span>
+<div class="overflow-hidden">
+<p class="text-body-sm font-bold truncate">Lista_Ex_Pilhas_v1.pdf</p>
+<p class="text-label-sm text-on-surface-variant">PDF • 1.2 MB</p>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-on-surface-variant">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span class="text-label-sm">3 comentários</span>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Placeholder Panels (Hidden by default) -->
+<div class="tab-panel hidden space-y-4" id="panel-atividades">
+<div class="bg-surface-container-lowest p-6 rounded-xl text-center border border-dashed border-outline">
+<span class="material-symbols-outlined text-4xl text-outline mb-2">assignment</span>
+<p class="text-body-md text-on-surface-variant">Lista de atividades em construção</p>
+</div>
+</div>
+<div class="tab-panel space-y-4 block" id="panel-notas"><!-- Summary Card -->
+<div class="bg-surface-container-lowest p-5 rounded-xl shadow-sm border border-outline-variant mb-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-sm text-primary">Média Atual</h3>
+<span class="text-2xl font-bold text-green-600">8.5</span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-2.5 mb-2">
+<div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+</div>
+<p class="text-label-sm text-on-surface-variant text-right">Para aprovação: 7.0</p>
+</div>
+<!-- Assessments List -->
+<div class="space-y-6">
+<!-- Category: Trabalhos -->
+<div>
+<h4 class="font-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Trabalhos</h4>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex justify-between items-center">
+<div>
+<p class="font-body-md font-bold">Implementação de Grafos</p>
+<p class="text-label-sm text-on-surface-variant">15 Abr • Peso: 2.0</p>
+</div>
+<span class="text-body-md font-bold text-primary">9.0</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex justify-between items-center">
+<div>
+<p class="font-body-md font-bold">Relatório de Árvores Binárias</p>
+<p class="text-label-sm text-on-surface-variant">22 Mar • Peso: 1.5</p>
+</div>
+<span class="text-body-md font-bold text-primary">8.0</span>
+</div>
+</div>
+</div>
+<!-- Category: Provas -->
+<div>
+<h4 class="font-label-md text-on-surface-variant mb-3 uppercase tracking-wider">Provas</h4>
+<div class="space-y-3">
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex justify-between items-center">
+<div>
+<p class="font-body-md font-bold">P1 - Teoria de Estruturas</p>
+<p class="text-label-sm text-on-surface-variant">10 Abr • Peso: 3.5</p>
+</div>
+<span class="text-body-md font-bold text-primary">8.5</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl border border-outline-variant flex justify-between items-center">
+<div class="opacity-60">
+<p class="font-body-md font-bold">P2 - Avaliação Final</p>
+<p class="text-label-sm text-on-surface-variant">15 Jun • Peso: 3.0</p>
+</div>
+<span class="text-label-sm font-medium text-on-surface-variant">Pendente</span>
+</div>
+</div>
+</div>
+</div></div>
+<div class="tab-panel hidden space-y-4" id="panel-pessoas">
+<div class="bg-surface-container-lowest p-6 rounded-xl text-center border border-dashed border-outline">
+<span class="material-symbols-outlined text-4xl text-outline mb-2">group</span>
+<p class="text-body-md text-on-surface-variant">Lista de alunos e professores</p>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB (Contextual for Course: Add post/task) -->
+
+<!-- BottomNavBar -->
+
+<script>
+        function switchTab(element, panelId) {
+            // Update Tab buttons styling
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('text-primary', 'font-bold');
+                btn.classList.add('text-on-surface-variant');
+            });
+            element.classList.add('text-primary', 'font-bold');
+            element.classList.remove('text-on-surface-variant');
+
+            // Update Indicator position
+            const indicator = document.getElementById('tab-indicator');
+            const index = Array.from(buttons).indexOf(element);
+            indicator.style.left = (index * 25) + '%';
+
+            // Switch Panels
+            const panels = document.querySelectorAll('.tab-panel');
+            panels.forEach(panel => panel.classList.add('hidden'));
+            
+            const activePanel = document.getElementById('panel-' + panelId);
+            activePanel.classList.remove('hidden');
+        }
+
+        // Active micro-interactions for buttons
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('touchstart', () => {
+                el.style.opacity = '0.7';
+            });
+            el.addEventListener('touchend', () => {
+                el.style.opacity = '1';
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+</body></html>
