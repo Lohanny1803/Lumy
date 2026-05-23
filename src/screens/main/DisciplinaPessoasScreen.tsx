@@ -7,9 +7,14 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {TopAppBar, TabsHeader, Card, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
+import {DisciplinaStackParamList} from '../../navigation/types';
+
+type NavProp = NativeStackNavigationProp<DisciplinaStackParamList, 'DisciplinaPessoas'>;
+type RouteType = RouteProp<DisciplinaStackParamList, 'DisciplinaPessoas'>;
 
 const tabs = [
   {key: 'mural', label: 'Mural'},
@@ -43,9 +48,19 @@ const alunos = [
 ];
 
 export default function DisciplinaPessoasScreen() {
-  const navigation = useNavigation();
-  const [activeTab, setActiveTab] = useState('pessoas');
+  const navigation = useNavigation<NavProp>();
+  const route = useRoute<RouteType>();
+  const {disciplinaId, nome} = route.params ?? {disciplinaId: '1', nome: 'Estrutura de Dados'};
   const [search, setSearch] = useState('');
+
+  function handleTabPress(key: string) {
+    const baseParams = {disciplinaId, nome, codigo: 'CIE-102', turma: 'Turma A'};
+    if (key === 'atividades' || key === 'mural') {
+      navigation.replace('DisciplinaAtividades', baseParams);
+    } else if (key === 'notas') {
+      navigation.replace('DisciplinaNotas', baseParams);
+    }
+  }
 
   const filteredAlunos = alunos.filter(a =>
     a.nome.toLowerCase().includes(search.toLowerCase()),
@@ -56,7 +71,7 @@ export default function DisciplinaPessoasScreen() {
       <TopAppBar
         showBack
         onBackPress={() => navigation.goBack()}
-        title="Cálculo Diferencial e Integral III"
+        title={nome}
         brandTitle
       />
 
@@ -67,8 +82,8 @@ export default function DisciplinaPessoasScreen() {
         stickyHeaderIndices={[0]}>
         <TabsHeader
           tabs={tabs}
-          activeTab={activeTab}
-          onTabPress={setActiveTab}
+          activeTab="pessoas"
+          onTabPress={handleTabPress}
         />
 
         <Text style={styles.sectionTitle}>Professores</Text>

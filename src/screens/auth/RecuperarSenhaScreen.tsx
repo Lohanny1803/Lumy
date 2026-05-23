@@ -2,14 +2,13 @@ import React, {useState, useRef} from 'react';
 import {
   View,
   Text,
-  TextInput,
   StyleSheet,
   TouchableOpacity,
   Animated,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {TopAppBar, Button} from '../../components';
+import {TopAppBar, Button, Input, Icon} from '../../components';
 import {colors, typography, spacing} from '../../theme';
 import {AuthStackParamList} from '../../navigation/types';
 
@@ -60,20 +59,20 @@ export default function RecuperarSenhaScreen() {
         <Animated.View
           style={[styles.lockIcon, {transform: [{scale: pulseAnim}]}]}>
           <View style={styles.iconCircle}>
-            <Text style={styles.lockEmoji}>🔐</Text>
+            <Icon name="lock_reset" size={48} color={colors.secondary} filled />
           </View>
         </Animated.View>
 
         <Text style={styles.title}>Esqueceu a senha?</Text>
         <Text style={styles.description}>
-          Digite seu e-mail institucional e enviaremos instruções para
-          redefinir sua senha.
+          Não se preocupe! Insira seu e-mail cadastrado e enviaremos as
+          instruções para redefinição.
         </Text>
 
-        <TextInput
-          style={styles.emailInput}
-          placeholder="seu@email.com"
-          placeholderTextColor={colors.outline}
+        <Input
+          label="E-mail"
+          leftIcon="mail"
+          placeholder="aluno@instituicao.edu.br"
           keyboardType="email-address"
           autoCapitalize="none"
           value={email}
@@ -107,30 +106,28 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     paddingHorizontal: spacing.containerPadding,
     gap: spacing.stackGap,
     paddingTop: 64,
+    maxWidth: 400,
+    width: '100%',
+    alignSelf: 'center',
   },
   lockIcon: {
+    alignSelf: 'center',
     marginBottom: spacing.base,
   },
   iconCircle: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
+    width: 96,
+    height: 96,
+    borderRadius: 48,
     backgroundColor: colors.surfaceContainerHigh,
     alignItems: 'center',
     justifyContent: 'center',
-    borderWidth: 2,
-    borderColor: colors.outlineVariant,
-  },
-  lockEmoji: {
-    fontSize: 36,
   },
   title: {
-    ...typography.headlineMd,
+    ...typography.headlineLg,
     color: colors.onSurface,
     textAlign: 'center',
   },
@@ -139,18 +136,6 @@ const styles = StyleSheet.create({
     color: colors.onSurfaceVariant,
     textAlign: 'center',
     maxWidth: 320,
-  },
-  emailInput: {
-    width: '100%',
-    maxWidth: 400,
-    height: 48,
-    borderWidth: 1,
-    borderColor: colors.outlineVariant,
-    borderRadius: 8,
-    paddingHorizontal: 16,
-    ...typography.bodyMd,
-    color: colors.onSurface,
-    backgroundColor: colors.surface,
   },
   sentMessage: {
     ...typography.bodySm,

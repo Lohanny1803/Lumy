@@ -5,9 +5,14 @@ import {
   ScrollView,
   StyleSheet,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {TopAppBar, TabsHeader, Card, Chip, FAB, Icon} from '../../components';
 import {colors, typography, spacing} from '../../theme';
+import {DisciplinaStackParamList} from '../../navigation/types';
+
+type NavProp = NativeStackNavigationProp<DisciplinaStackParamList, 'DisciplinaAtividades'>;
+type RouteType = RouteProp<DisciplinaStackParamList, 'DisciplinaAtividades'>;
 
 const tabs = [
   {key: 'mural', label: 'Mural'},
@@ -55,17 +60,32 @@ const atividades = [
 ];
 
 export default function DisciplinaAtividadesScreen() {
-  const navigation = useNavigation();
-  const [activeTab, setActiveTab] = useState('atividades');
+  const navigation = useNavigation<NavProp>();
+  const route = useRoute<RouteType>();
+  const {disciplinaId, nome, codigo, turma} = route.params ?? {
+    disciplinaId: '1',
+    nome: 'Estrutura de Dados',
+    codigo: 'CIE-102',
+    turma: 'Turma A',
+  };
   const [filter, setFilter] = useState('todos');
+
+  function handleTabPress(key: string) {
+    const params = {disciplinaId, nome, codigo, turma};
+    if (key === 'notas') {
+      navigation.replace('DisciplinaNotas', params);
+    } else if (key === 'pessoas') {
+      navigation.replace('DisciplinaPessoas', {disciplinaId, nome});
+    }
+  }
 
   return (
     <View style={styles.screen}>
       <TopAppBar
         showBack
         onBackPress={() => navigation.goBack()}
-        title="Estrutura de Dados"
-        subtitle="CIE-102 · Turma A"
+        title={nome}
+        subtitle={`${codigo} · ${turma}`}
         brandTitle
       />
 
@@ -76,8 +96,8 @@ export default function DisciplinaAtividadesScreen() {
         stickyHeaderIndices={[0]}>
         <TabsHeader
           tabs={tabs}
-          activeTab={activeTab}
-          onTabPress={setActiveTab}
+          activeTab="atividades"
+          onTabPress={handleTabPress}
         />
 
         <ScrollView

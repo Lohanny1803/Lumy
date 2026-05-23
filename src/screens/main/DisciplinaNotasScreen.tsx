@@ -1,13 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   View,
   Text,
   ScrollView,
   StyleSheet,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
+import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {TopAppBar, TabsHeader, Card, Icon} from '../../components';
 import {colors, typography, spacing} from '../../theme';
+import {DisciplinaStackParamList} from '../../navigation/types';
+
+type NavProp = NativeStackNavigationProp<DisciplinaStackParamList, 'DisciplinaNotas'>;
+type RouteType = RouteProp<DisciplinaStackParamList, 'DisciplinaNotas'>;
 
 const tabs = [
   {key: 'mural', label: 'Mural'},
@@ -27,16 +32,31 @@ const provas = [
 ];
 
 export default function DisciplinaNotasScreen() {
-  const navigation = useNavigation();
-  const [activeTab, setActiveTab] = useState('notas');
+  const navigation = useNavigation<NavProp>();
+  const route = useRoute<RouteType>();
+  const {disciplinaId, nome, codigo, turma} = route.params ?? {
+    disciplinaId: '1',
+    nome: 'Estrutura de Dados',
+    codigo: 'CIE-102',
+    turma: 'Turma A',
+  };
+
+  function handleTabPress(key: string) {
+    const params = {disciplinaId, nome, codigo, turma};
+    if (key === 'atividades' || key === 'mural') {
+      navigation.replace('DisciplinaAtividades', params);
+    } else if (key === 'pessoas') {
+      navigation.replace('DisciplinaPessoas', {disciplinaId, nome});
+    }
+  }
 
   return (
     <View style={styles.screen}>
       <TopAppBar
         showBack
         onBackPress={() => navigation.goBack()}
-        title="Estrutura de Dados"
-        subtitle="CIE-102 · Turma A"
+        title={nome}
+        subtitle={`${codigo} · ${turma}`}
         brandTitle
       />
 
@@ -47,8 +67,8 @@ export default function DisciplinaNotasScreen() {
         stickyHeaderIndices={[0]}>
         <TabsHeader
           tabs={tabs}
-          activeTab={activeTab}
-          onTabPress={setActiveTab}
+          activeTab="notas"
+          onTabPress={handleTabPress}
         />
 
         <Card accentColor={colors.primary} style={styles.gradeCard}>

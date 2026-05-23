@@ -64,6 +64,10 @@ const iconMap: Record<string, string> = {
   send: 'send',
   image: 'image',
   more_vert: 'more-vert',
+  grade: 'grade',
+  campaign: 'campaign',
+  done_all: 'done-all',
+  chevron_left: 'chevron-left',
 };
 
 export default function Icon({

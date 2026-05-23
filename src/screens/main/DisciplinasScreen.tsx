@@ -8,20 +8,24 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {CompositeNavigationProp} from '@react-navigation/native';
 import {TopAppBar, BottomNavBar, Card, Chip, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
-import {MainTabParamList} from '../../navigation/types';
+import {DisciplinaStackParamList, MainTabParamList} from '../../navigation/types';
 
-type NavigationProp = BottomTabNavigationProp<
-  MainTabParamList,
-  'DisciplinasTab'
+type NavigationProp = CompositeNavigationProp<
+  NativeStackNavigationProp<DisciplinaStackParamList, 'DisciplinasList'>,
+  BottomTabNavigationProp<MainTabParamList>
 >;
 
 const disciplines = [
   {
     id: '1',
     nome: 'Cálculo I',
+    codigo: 'MAT101',
+    turma: 'T01',
     professor: 'Dr. Alberto Santos',
     progresso: 75,
     tag: 'Exatas',
@@ -30,6 +34,8 @@ const disciplines = [
   {
     id: '2',
     nome: 'Estrutura de Dados',
+    codigo: 'INF202',
+    turma: 'T02',
     professor: 'Profa. Marina Costa',
     progresso: 45,
     tag: 'Tech',
@@ -38,6 +44,8 @@ const disciplines = [
   {
     id: '3',
     nome: 'Algoritmos',
+    codigo: 'INF301',
+    turma: 'T01',
     professor: 'Prof. Ricardo Mello',
     progresso: 92,
     tag: 'Tech',
@@ -46,6 +54,8 @@ const disciplines = [
   {
     id: '4',
     nome: 'Inteligência Artificial',
+    codigo: 'INF401',
+    turma: 'T03',
     professor: 'Dra. Elenir Rocha',
     progresso: 12,
     tag: 'Avançado',
@@ -54,6 +64,8 @@ const disciplines = [
   {
     id: '5',
     nome: 'Sistemas Operacionais',
+    codigo: 'INF305',
+    turma: 'T02',
     professor: 'Prof. Marcos Paulo',
     progresso: 60,
     tag: 'Tech',
@@ -62,6 +74,8 @@ const disciplines = [
   {
     id: '6',
     nome: 'Física Quântica',
+    codigo: 'FIS401',
+    turma: 'T01',
     professor: 'Dra. Sônia Abreu',
     progresso: 30,
     tag: 'Exatas',
@@ -70,6 +84,8 @@ const disciplines = [
   {
     id: '7',
     nome: 'História da Ciência',
+    codigo: 'HIS201',
+    turma: 'T04',
     professor: 'Prof. Julio Verne',
     progresso: 85,
     tag: 'Humanas',
@@ -133,7 +149,14 @@ export default function DisciplinasScreen() {
             <TouchableOpacity
               key={`${d.id}-${i}`}
               activeOpacity={0.7}
-              onPress={() => {}}>
+              onPress={() =>
+                navigation.navigate('DisciplinaAtividades', {
+                  disciplinaId: d.id,
+                  nome: d.nome,
+                  codigo: d.codigo,
+                  turma: d.turma,
+                })
+              }>
               <Card accentColor={d.tagColor} style={styles.disciplineCard}>
                 <View style={styles.cardHeader}>
                   <Text style={styles.disciplineName}>{d.nome}</Text>

@@ -12,11 +12,12 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Input, Button, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
-import {AuthStackParamList} from '../../navigation/types';
+import {AuthStackParamList, RootStackParamList} from '../../navigation/types';
+import {CompositeNavigationProp} from '@react-navigation/native';
 
-type NavigationProp = NativeStackNavigationProp<
-  AuthStackParamList,
-  'Cadastro'
+type NavigationProp = CompositeNavigationProp<
+  NativeStackNavigationProp<AuthStackParamList, 'Cadastro'>,
+  NativeStackNavigationProp<RootStackParamList>
 >;
 
 export default function CadastroScreen() {
@@ -30,7 +31,10 @@ export default function CadastroScreen() {
 
   const handleRegister = () => {
     setLoading(true);
-    setTimeout(() => setLoading(false), 1500);
+    setTimeout(() => {
+      setLoading(false);
+      navigation.replace('Main');
+    }, 1000);
   };
 
   return (
@@ -83,7 +87,7 @@ export default function CadastroScreen() {
 
             <Input
               label="Confirmar Senha"
-              leftIcon="lock"
+              leftIcon="lock_reset"
               placeholder="••••••••"
               isPassword
               value={confirmPassword}

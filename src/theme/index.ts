@@ -1,4 +1,4 @@
-import {TextStyle, ViewStyle} from 'react-native';
+import {Platform, TextStyle, ViewStyle} from 'react-native';
 
 export const colors = {
   primary: '#0096C7',
@@ -113,25 +113,34 @@ export const borderRadius = {
 } as const;
 
 export const shadows: Record<string, ViewStyle> = {
-  card: {
-    shadowColor: colors.black,
-    shadowOffset: {width: 0, height: 2},
-    shadowOpacity: 0.04,
-    shadowRadius: 8,
-    elevation: 2,
-  },
-  fab: {
-    shadowColor: colors.black,
-    shadowOffset: {width: 0, height: 4},
-    shadowOpacity: 0.12,
-    shadowRadius: 12,
-    elevation: 6,
-  },
-  topBar: {
-    shadowColor: colors.black,
-    shadowOffset: {width: 0, height: 1},
-    shadowOpacity: 0.08,
-    shadowRadius: 2,
-    elevation: 2,
-  },
+  card: Platform.select({
+    web: {boxShadow: '0px 2px 8px rgba(0,0,0,0.04)'} as ViewStyle,
+    default: {
+      shadowColor: colors.black,
+      shadowOffset: {width: 0, height: 2},
+      shadowOpacity: 0.04,
+      shadowRadius: 8,
+      elevation: 2,
+    },
+  })!,
+  fab: Platform.select({
+    web: {boxShadow: '0px 4px 12px rgba(0,0,0,0.12)'} as ViewStyle,
+    default: {
+      shadowColor: colors.black,
+      shadowOffset: {width: 0, height: 4},
+      shadowOpacity: 0.12,
+      shadowRadius: 12,
+      elevation: 6,
+    },
+  })!,
+  topBar: Platform.select({
+    web: {boxShadow: '0px 1px 2px rgba(0,0,0,0.08)'} as ViewStyle,
+    default: {
+      shadowColor: colors.black,
+      shadowOffset: {width: 0, height: 1},
+      shadowOpacity: 0.08,
+      shadowRadius: 2,
+      elevation: 2,
+    },
+  })!,
 };

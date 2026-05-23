@@ -18,13 +18,21 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.m?js$/,
+        resolve: {
+          fullySpecified: false,
+        },
+      },
+      {
         test: /\.(js|jsx|ts|tsx)$/,
-        exclude: /node_modules\/(?!react-native|@react-native|react-native-vector-icons)/,
+        exclude: /node_modules\/(?!react-native|@react-native|react-native-vector-icons|@react-navigation)/,
         use: {
           loader: 'babel-loader',
           options: {
+            configFile: false,
+            babelrc: false,
             presets: [
-              '@babel/preset-env',
+              ['@babel/preset-env', {modules: false}],
               ['@babel/preset-react', {runtime: 'automatic'}],
               '@babel/preset-typescript',
             ],

@@ -79,7 +79,7 @@ export default function CalendarioScreen() {
           <View style={styles.monthHeader}>
             <TouchableOpacity activeOpacity={0.7}>
               <Icon
-                name="chevron_right"
+                name="chevron_left"
                 size={24}
                 color={colors.onSurface}
               />
@@ -89,7 +89,7 @@ export default function CalendarioScreen() {
             </Text>
             <TouchableOpacity activeOpacity={0.7}>
               <Icon
-                name="arrow_forward"
+                name="chevron_right"
                 size={24}
                 color={colors.onSurface}
               />

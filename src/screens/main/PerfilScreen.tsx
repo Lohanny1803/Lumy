@@ -8,11 +8,16 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {CompositeNavigationProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {TopAppBar, BottomNavBar, Card, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
-import {MainTabParamList} from '../../navigation/types';
+import {MainTabParamList, RootStackParamList} from '../../navigation/types';
 
-type NavigationProp = BottomTabNavigationProp<MainTabParamList, 'PerfilTab'>;
+type NavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<MainTabParamList, 'PerfilTab'>,
+  NativeStackNavigationProp<RootStackParamList>
+>;
 
 const tabs = [
   {key: 'HomeTab', label: 'Início', icon: 'home'},
@@ -92,7 +97,10 @@ export default function PerfilScreen() {
           />
         </Card>
 
-        <TouchableOpacity style={styles.logoutButton} activeOpacity={0.7}>
+        <TouchableOpacity
+          style={styles.logoutButton}
+          activeOpacity={0.7}
+          onPress={() => navigation.replace('Auth')}>
           <Icon name="logout" size={20} color={colors.error} />
           <Text style={styles.logoutText}>Sair</Text>
         </TouchableOpacity>

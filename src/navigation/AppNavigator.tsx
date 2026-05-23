@@ -11,11 +11,11 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Main" component={MainTabNavigator} />
+        <Stack.Screen name="Auth" component={AuthNavigator} />
         <Stack.Screen
-          name="Auth"
-          component={AuthNavigator}
-          options={{animation: 'slide_from_bottom'}}
+          name="Main"
+          component={MainTabNavigator}
+          options={{animation: 'fade'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -9,11 +9,12 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {TopAppBar, Button} from '../../components';
 import {colors, typography, spacing} from '../../theme';
-import {AuthStackParamList} from '../../navigation/types';
+import {AuthStackParamList, RootStackParamList} from '../../navigation/types';
+import {CompositeNavigationProp} from '@react-navigation/native';
 
-type NavigationProp = NativeStackNavigationProp<
-  AuthStackParamList,
-  'VerificarCodigo'
+type NavigationProp = CompositeNavigationProp<
+  NativeStackNavigationProp<AuthStackParamList, 'VerificarCodigo'>,
+  NativeStackNavigationProp<RootStackParamList>
 >;
 
 const CODE_LENGTH = 4;
@@ -70,8 +71,8 @@ export default function VerificarCodigoScreen() {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      setError(true);
-    }, 1500);
+      navigation.replace('Main');
+    }, 1000);
   };
 
   return (

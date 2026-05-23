@@ -12,9 +12,9 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Input, Button, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
-import {AuthStackParamList} from '../../navigation/types';
+import {RootStackParamList} from '../../navigation/types';
 
-type NavigationProp = NativeStackNavigationProp<AuthStackParamList, 'Login'>;
+type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Auth'>;
 
 export default function LoginScreen() {
   const navigation = useNavigation<NavigationProp>();
@@ -24,7 +24,10 @@ export default function LoginScreen() {
 
   const handleLogin = () => {
     setLoading(true);
-    setTimeout(() => setLoading(false), 1500);
+    setTimeout(() => {
+      setLoading(false);
+      navigation.replace('Main');
+    }, 1000);
   };
 
   return (
@@ -74,6 +77,7 @@ export default function LoginScreen() {
               title="Entrar"
               onPress={handleLogin}
               loading={loading}
+              disabled={!email || !password}
               variant="secondary"
             />
           </View>
