@@ -37,7 +37,7 @@ export default function TopAppBar({
           onPress={onBackPress}
           style={styles.backButton}
           activeOpacity={0.7}>
-          <Icon name="arrow_forward" size={24} color={colors.onSurface} />
+          <Icon name="arrow_back" size={24} color={colors.onSurface} />
         </TouchableOpacity>
       ) : (
         <View style={styles.backButton} />

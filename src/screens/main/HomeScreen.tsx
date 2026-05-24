@@ -37,12 +37,18 @@ export default function HomeScreen() {
           <Text style={styles.summaryTitle}>Resumo Acadêmico</Text>
           <View style={styles.summaryRow}>
             <View style={styles.summaryItem}>
-              <Text style={styles.summaryLabel}>Média Geral</Text>
+              <View style={styles.summaryIconLabel}>
+                <Icon name="grade" size={16} color={colors.onSurfaceVariant} />
+                <Text style={styles.summaryLabel}>Média Geral</Text>
+              </View>
               <Text style={styles.summaryValue}>8.5</Text>
             </View>
             <View style={styles.summaryDivider} />
             <View style={styles.summaryItem}>
-              <Text style={styles.summaryLabel}>Frequência</Text>
+              <View style={styles.summaryIconLabel}>
+                <Icon name="pie_chart" size={16} color={colors.onSurfaceVariant} />
+                <Text style={styles.summaryLabel}>Frequência</Text>
+              </View>
               <Text style={styles.summaryValue}>92%</Text>
             </View>
           </View>
@@ -179,6 +185,12 @@ const styles = StyleSheet.create({
   summaryItem: {
     flex: 1,
     alignItems: 'center',
+    gap: 4,
+  },
+  summaryIconLabel: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
   },
   summaryLabel: {
     ...typography.labelMd,

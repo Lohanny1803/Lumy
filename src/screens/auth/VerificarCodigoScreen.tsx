@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {TopAppBar, Button} from '../../components';
+import {TopAppBar, Button, Icon} from '../../components';
 import {colors, typography, spacing} from '../../theme';
 import {AuthStackParamList, RootStackParamList} from '../../navigation/types';
 import {CompositeNavigationProp} from '@react-navigation/native';
@@ -85,6 +85,10 @@ export default function VerificarCodigoScreen() {
         centerTitle
       />
       <View style={styles.content}>
+        <View style={styles.iconCircle}>
+          <Icon name="email" size={48} color={colors.primary} />
+        </View>
+
         <Text style={styles.title}>Verificar E-mail</Text>
         <Text style={styles.description}>
           Enviamos um código de 4 dígitos para o seu e-mail institucional.
@@ -149,7 +153,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: spacing.containerPadding,
     gap: spacing.stackGap,
-    paddingTop: 64,
+    paddingTop: 32,
+  },
+  iconCircle: {
+    width: 96,
+    height: 96,
+    borderRadius: 48,
+    backgroundColor: colors.surfaceContainerHigh,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: spacing.base,
   },
   title: {
     ...typography.headlineMd,

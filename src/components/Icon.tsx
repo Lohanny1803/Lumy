@@ -68,6 +68,7 @@ const iconMap: Record<string, string> = {
   campaign: 'campaign',
   done_all: 'done-all',
   chevron_left: 'chevron-left',
+  arrow_back: 'arrow-back',
 };
 
 export default function Icon({

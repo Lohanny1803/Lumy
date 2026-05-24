@@ -61,6 +61,7 @@ export default function CadastroScreen() {
           <View style={styles.form}>
             <Input
               label="Nome Completo"
+              leftIcon="person"
               placeholder="Seu nome completo"
               value={nome}
               onChangeText={setNome}

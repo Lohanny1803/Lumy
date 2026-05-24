@@ -30,6 +30,7 @@ const disciplines = [
     progresso: 75,
     tag: 'Exatas',
     tagColor: colors.primary,
+    icon: 'architecture',
   },
   {
     id: '2',
@@ -40,6 +41,7 @@ const disciplines = [
     progresso: 45,
     tag: 'Tech',
     tagColor: colors.secondary,
+    icon: 'code',
   },
   {
     id: '3',
@@ -50,6 +52,7 @@ const disciplines = [
     progresso: 92,
     tag: 'Tech',
     tagColor: colors.secondary,
+    icon: 'code',
   },
   {
     id: '4',
@@ -60,6 +63,7 @@ const disciplines = [
     progresso: 12,
     tag: 'Avançado',
     tagColor: colors.error,
+    icon: 'psychology',
   },
   {
     id: '5',
@@ -70,6 +74,7 @@ const disciplines = [
     progresso: 60,
     tag: 'Tech',
     tagColor: colors.secondary,
+    icon: 'memory',
   },
   {
     id: '6',
@@ -80,6 +85,7 @@ const disciplines = [
     progresso: 30,
     tag: 'Exatas',
     tagColor: colors.primary,
+    icon: 'science',
   },
   {
     id: '7',
@@ -90,6 +96,7 @@ const disciplines = [
     progresso: 85,
     tag: 'Humanas',
     tagColor: colors.tertiaryContainer,
+    icon: 'history',
   },
 ];
 
@@ -159,7 +166,10 @@ export default function DisciplinasScreen() {
               }>
               <Card accentColor={d.tagColor} style={styles.disciplineCard}>
                 <View style={styles.cardHeader}>
-                  <Text style={styles.disciplineName}>{d.nome}</Text>
+                    <View style={styles.disciplineNameRow}>
+                      <Icon name={d.icon} size={20} color={d.tagColor} />
+                      <Text style={styles.disciplineName}>{d.nome}</Text>
+                    </View>
                   <Chip label={d.tag} active color={d.tagColor} />
                 </View>
                 <View style={styles.professorRow}>
@@ -256,6 +266,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
+  },
+  disciplineNameRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    flex: 1,
+    marginRight: 8,
   },
   disciplineName: {
     ...typography.headlineSm,
