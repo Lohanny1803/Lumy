@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {TopAppBar, BottomNavBar, Card, Chip, FAB, Icon} from '../../components';
+import {TopAppBar, BottomNavBar, Card, Chip, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
 import {MainTabParamList} from '../../navigation/types';
 import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
@@ -108,8 +108,6 @@ export default function HomeScreen() {
 
         <View style={{height: 100}} />
       </ScrollView>
-
-      <FAB onPress={() => {}} />
 
       <BottomNavBar
         tabs={tabs}

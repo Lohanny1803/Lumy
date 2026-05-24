@@ -11,6 +11,7 @@ import PerfilScreen from '../screens/main/PerfilScreen';
 import DisciplinaAtividadesScreen from '../screens/main/DisciplinaAtividadesScreen';
 import DisciplinaNotasScreen from '../screens/main/DisciplinaNotasScreen';
 import DisciplinaPessoasScreen from '../screens/main/DisciplinaPessoasScreen';
+import DisciplinaMuralScreen from '../screens/main/DisciplinaMuralScreen';
 
 const Tab = createBottomTabNavigator<MainTabParamList>();
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,10 @@ function DisciplinasStack() {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="DisciplinasList" component={DisciplinasScreen} />
+      <Stack.Screen
+        name="DisciplinaMural"
+        component={DisciplinaMuralScreen}
+      />
       <Stack.Screen
         name="DisciplinaAtividades"
         component={DisciplinaAtividadesScreen}

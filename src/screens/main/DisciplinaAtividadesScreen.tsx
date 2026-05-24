@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import {useNavigation, useRoute, RouteProp} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {TopAppBar, TabsHeader, Card, Chip, FAB, Icon} from '../../components';
+import {TopAppBar, TabsHeader, Card, Chip, Icon} from '../../components';
 import {colors, typography, spacing} from '../../theme';
 import {DisciplinaStackParamList} from '../../navigation/types';
 
@@ -72,7 +72,9 @@ export default function DisciplinaAtividadesScreen() {
 
   function handleTabPress(key: string) {
     const params = {disciplinaId, nome, codigo, turma};
-    if (key === 'notas') {
+    if (key === 'mural') {
+      navigation.replace('DisciplinaMural', params);
+    } else if (key === 'notas') {
       navigation.replace('DisciplinaNotas', params);
     } else if (key === 'pessoas') {
       navigation.replace('DisciplinaPessoas', {disciplinaId, nome});
@@ -186,7 +188,6 @@ export default function DisciplinaAtividadesScreen() {
         <View style={{height: 100}} />
       </ScrollView>
 
-      <FAB onPress={() => {}} />
     </View>
   );
 }

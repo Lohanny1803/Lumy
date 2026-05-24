@@ -15,6 +15,7 @@ export type MainTabParamList = {
 
 export type DisciplinaStackParamList = {
   DisciplinasList: undefined;
+  DisciplinaMural: {disciplinaId: string; nome: string; codigo: string; turma: string};
   DisciplinaAtividades: {disciplinaId: string; nome: string; codigo: string; turma: string};
   DisciplinaNotas: {disciplinaId: string; nome: string; codigo: string; turma: string};
   DisciplinaPessoas: {disciplinaId: string; nome: string};

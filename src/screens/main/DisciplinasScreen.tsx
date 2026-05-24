@@ -157,7 +157,7 @@ export default function DisciplinasScreen() {
               key={`${d.id}-${i}`}
               activeOpacity={0.7}
               onPress={() =>
-                navigation.navigate('DisciplinaAtividades', {
+                navigation.navigate('DisciplinaMural', {
                   disciplinaId: d.id,
                   nome: d.nome,
                   codigo: d.codigo,

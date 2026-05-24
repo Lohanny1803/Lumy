@@ -55,7 +55,9 @@ export default function DisciplinaPessoasScreen() {
 
   function handleTabPress(key: string) {
     const baseParams = {disciplinaId, nome, codigo: 'CIE-102', turma: 'Turma A'};
-    if (key === 'atividades' || key === 'mural') {
+    if (key === 'mural') {
+      navigation.replace('DisciplinaMural', baseParams);
+    } else if (key === 'atividades') {
       navigation.replace('DisciplinaAtividades', baseParams);
     } else if (key === 'notas') {
       navigation.replace('DisciplinaNotas', baseParams);

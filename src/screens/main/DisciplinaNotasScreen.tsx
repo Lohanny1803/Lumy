@@ -43,7 +43,9 @@ export default function DisciplinaNotasScreen() {
 
   function handleTabPress(key: string) {
     const params = {disciplinaId, nome, codigo, turma};
-    if (key === 'atividades' || key === 'mural') {
+    if (key === 'mural') {
+      navigation.replace('DisciplinaMural', params);
+    } else if (key === 'atividades') {
       navigation.replace('DisciplinaAtividades', params);
     } else if (key === 'pessoas') {
       navigation.replace('DisciplinaPessoas', {disciplinaId, nome});
