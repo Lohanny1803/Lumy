@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, ViewStyle, StyleProp} from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons } from '@expo/vector-icons';
 import {colors} from '../theme';
 
 interface IconProps {
@@ -83,7 +83,7 @@ export default function Icon({
 
   return (
     <TouchableOpacity disabled style={style}>
-      <MaterialIcons name={mappedName} size={size} color={color} />
+      <MaterialIcons name={mappedName as any} size={size} color={color} />
     </TouchableOpacity>
   );
 }

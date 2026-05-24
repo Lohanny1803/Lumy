@@ -1,4 +1,26 @@
 {
   "name": "LumyApp",
-  "displayName": "LumyApp"
+  "displayName": "Lumy",
+  "expo": {
+    "name": "Lumy",
+    "slug": "lumy",
+    "version": "1.0.0",
+    "scheme": "lumy",
+    "platforms": ["android", "web"],
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "android": {
+      "package": "com.lumyapp",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/Lumy-2.png",
+        "backgroundColor": "#001e2b"
+      }
+    },
+    "plugins": ["expo-router"],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
 }
