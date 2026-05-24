@@ -5,9 +5,12 @@ import {
   TouchableOpacity,
   StyleSheet,
   ViewStyle,
+  Image,
 } from 'react-native';
 import Icon from './Icon';
 import {colors, typography, spacing, shadows} from '../theme';
+
+const lumyLogo = require('../../assets/Lumy-2.png');
 
 interface RightAction {
   icon: string;
@@ -50,7 +53,7 @@ export default function TopAppBar({
         </TouchableOpacity>
       ) : brandTitle ? (
         <View style={styles.brandMark}>
-          <Icon name="school" size={18} color={colors.onPrimary} />
+          <Image source={lumyLogo} style={styles.brandLogo} resizeMode="contain" />
         </View>
       ) : (
         <View style={styles.iconButton} />
@@ -146,6 +149,10 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primaryDark,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  brandLogo: {
+    width: 26,
+    height: 26,
   },
   brandContainer: {
     flex: 1,

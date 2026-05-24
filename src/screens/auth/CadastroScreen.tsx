@@ -7,12 +7,15 @@ import {
   KeyboardAvoidingView,
   Platform,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Input, Button, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
 import {AuthStackParamList, RootStackParamList} from '../../navigation/types';
+
+const lumyLogo = require('../../../assets/Lumy-2.png');
 import {CompositeNavigationProp} from '@react-navigation/native';
 
 type NavigationProp = CompositeNavigationProp<
@@ -48,7 +51,7 @@ export default function CadastroScreen() {
         <View style={styles.card}>
           <View style={styles.header}>
             <View style={styles.iconContainer}>
-              <Icon name="school" size={32} color={colors.onPrimary} filled />
+              <Image source={lumyLogo} style={styles.logo} resizeMode="contain" />
             </View>
             <View style={styles.titleGroup}>
               <Text style={styles.title}>Criar Conta</Text>
@@ -182,6 +185,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 8,
     ...shadows.topBar,
+  },
+  logo: {
+    width: 46,
+    height: 46,
   },
   titleGroup: {
     alignItems: 'center',

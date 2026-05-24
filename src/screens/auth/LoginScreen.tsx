@@ -7,12 +7,15 @@ import {
   KeyboardAvoidingView,
   Platform,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {Input, Button, Icon} from '../../components';
 import {colors, typography, spacing, shadows} from '../../theme';
 import {RootStackParamList} from '../../navigation/types';
+
+const lumyLogo = require('../../../assets/Lumy-2.png');
 
 type NavigationProp = NativeStackNavigationProp<RootStackParamList, 'Auth'>;
 
@@ -40,7 +43,7 @@ export default function LoginScreen() {
         <View style={styles.card}>
           <View style={styles.header}>
             <View style={styles.iconContainer}>
-              <Icon name="school" size={32} color={colors.onPrimary} filled />
+              <Image source={lumyLogo} style={styles.logo} resizeMode="contain" />
             </View>
             <View style={styles.titleGroup}>
               <Text style={styles.title}>Bem-vindo de volta</Text>
@@ -141,6 +144,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 8,
     ...shadows.topBar,
+  },
+  logo: {
+    width: 46,
+    height: 46,
   },
   titleGroup: {
     alignItems: 'center',
