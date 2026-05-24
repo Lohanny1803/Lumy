@@ -187,8 +187,8 @@ const styles = StyleSheet.create({
     ...shadows.topBar,
   },
   logo: {
-    width: 46,
-    height: 46,
+    width: 58,
+    height: 58,
   },
   titleGroup: {
     alignItems: 'center',
