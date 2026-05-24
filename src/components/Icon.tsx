@@ -69,6 +69,7 @@ const iconMap: Record<string, string> = {
   done_all: 'done-all',
   chevron_left: 'chevron-left',
   arrow_back: 'arrow-back',
+  today: 'today',
 };
 
 export default function Icon({

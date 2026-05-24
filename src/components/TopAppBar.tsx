@@ -9,12 +9,19 @@ import {
 import Icon from './Icon';
 import {colors, typography, spacing, shadows} from '../theme';
 
+interface RightAction {
+  icon: string;
+  onPress: () => void;
+  badge?: boolean;
+}
+
 interface TopAppBarProps {
   title?: string;
   subtitle?: string;
   showBack?: boolean;
   onBackPress?: () => void;
   rightAction?: React.ReactNode;
+  rightActions?: RightAction[];
   centerTitle?: boolean;
   brandTitle?: boolean;
   style?: ViewStyle;
@@ -26,47 +33,84 @@ export default function TopAppBar({
   showBack = false,
   onBackPress,
   rightAction,
+  rightActions,
   centerTitle = false,
   brandTitle = false,
   style,
 }: TopAppBarProps) {
   return (
     <View style={[styles.container, shadows.topBar, style]}>
+      {/* Lado esquerdo */}
       {showBack ? (
         <TouchableOpacity
           onPress={onBackPress}
-          style={styles.backButton}
+          style={styles.iconButton}
           activeOpacity={0.7}>
           <Icon name="arrow_back" size={24} color={colors.onSurface} />
         </TouchableOpacity>
+      ) : brandTitle ? (
+        <View style={styles.brandMark}>
+          <Icon name="school" size={18} color={colors.onPrimary} />
+        </View>
       ) : (
-        <View style={styles.backButton} />
+        <View style={styles.iconButton} />
       )}
 
-      <View
-        style={[
-          styles.titleContainer,
-          centerTitle && styles.titleCentered,
-        ]}>
-        {subtitle && (
-          <Text style={styles.subtitle} numberOfLines={1}>
-            {subtitle}
-          </Text>
-        )}
-        {title && (
-          <Text
-            style={[
-              styles.title,
-              brandTitle && styles.brandTitle,
-            ]}
-            numberOfLines={1}>
+      {/* Centro */}
+      {brandTitle ? (
+        <View style={[styles.brandContainer, centerTitle && styles.brandCentered]}>
+          <Text style={styles.brandName} numberOfLines={1}>
             {title}
           </Text>
-        )}
-      </View>
+          {subtitle ? (
+            <Text style={styles.brandSubtitle} numberOfLines={1}>
+              {subtitle}
+            </Text>
+          ) : null}
+        </View>
+      ) : (
+        <View
+          style={[
+            styles.titleContainer,
+            centerTitle && styles.titleCentered,
+          ]}>
+          {subtitle ? (
+            <Text style={styles.detailSubtitle} numberOfLines={1}>
+              {subtitle}
+            </Text>
+          ) : null}
+          {title ? (
+            <Text style={styles.detailTitle} numberOfLines={1}>
+              {title}
+            </Text>
+          ) : null}
+        </View>
+      )}
 
+      {/* Lado direito */}
       <View style={styles.rightContainer}>
-        {rightAction || <View style={styles.backButton} />}
+        {rightActions && rightActions.length > 0 ? (
+          rightActions.map((action, i) => (
+            <TouchableOpacity
+              key={i}
+              style={styles.iconButton}
+              onPress={action.onPress}
+              activeOpacity={0.7}>
+              {action.badge ? (
+                <View>
+                  <Icon name={action.icon} size={24} color={colors.onSurface} />
+                  <View style={styles.badge} />
+                </View>
+              ) : (
+                <Icon name={action.icon} size={24} color={colors.onSurface} />
+              )}
+            </TouchableOpacity>
+          ))
+        ) : rightAction ? (
+          rightAction
+        ) : (
+          <View style={styles.iconButton} />
+        )}
       </View>
     </View>
   );
@@ -88,33 +132,71 @@ const styles = StyleSheet.create({
     right: 0,
     zIndex: 50,
   },
-  backButton: {
+  iconButton: {
     width: 40,
     height: 40,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 20,
+  },
+  brandMark: {
+    width: 36,
+    height: 36,
+    borderRadius: 10,
+    backgroundColor: colors.primaryDark,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  brandContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 12,
+  },
+  brandCentered: {
+    alignItems: 'center',
+  },
+  brandName: {
+    fontSize: 20,
+    fontWeight: '800',
+    color: colors.primaryDark,
+    letterSpacing: -0.4,
+    lineHeight: 24,
+  },
+  brandSubtitle: {
+    ...typography.bodySm,
+    color: colors.onSurfaceVariant,
+    marginTop: 1,
   },
   titleContainer: {
     flex: 1,
     justifyContent: 'center',
+    paddingHorizontal: 8,
   },
   titleCentered: {
     alignItems: 'center',
   },
-  title: {
-    ...typography.headlineSm,
-    color: colors.onSurface,
-  },
-  brandTitle: {
-    color: colors.primaryDark,
-    fontWeight: '700',
-  },
-  subtitle: {
+  detailSubtitle: {
     ...typography.labelMd,
     color: colors.onSurfaceVariant,
   },
+  detailTitle: {
+    ...typography.headlineSm,
+    color: colors.onSurface,
+  },
   rightContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    gap: 4,
+  },
+  badge: {
+    position: 'absolute',
+    top: 1,
+    right: 1,
+    width: 8,
+    height: 8,
+    borderRadius: 4,
+    backgroundColor: colors.error,
+    borderWidth: 1.5,
+    borderColor: colors.surface,
   },
 });

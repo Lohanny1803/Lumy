@@ -120,7 +120,10 @@ export default function DisciplinasScreen() {
 
   return (
     <View style={styles.screen}>
-      <TopAppBar title="Lumy" brandTitle />
+      <TopAppBar
+        title="Lumy"
+        brandTitle
+      />
 
       <ScrollView
         style={styles.scroll}

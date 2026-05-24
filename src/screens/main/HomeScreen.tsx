@@ -27,7 +27,11 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.screen}>
-      <TopAppBar title="Lumy" subtitle="Olá, Lucas Oliveira!" brandTitle />
+      <TopAppBar
+        title="Lumy"
+        subtitle="Olá, Lucas Oliveira!"
+        brandTitle
+      />
 
       <ScrollView
         style={styles.scroll}

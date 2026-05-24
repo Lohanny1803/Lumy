@@ -32,7 +32,10 @@ export default function PerfilScreen() {
 
   return (
     <View style={styles.screen}>
-      <TopAppBar title="Lumy" brandTitle centerTitle />
+      <TopAppBar
+        title="Lumy"
+        brandTitle
+      />
 
       <ScrollView
         style={styles.scroll}
